@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "Press Start 2P";
+    src: url(/fonts/PressStart2P-Regular.ttf) format('truetype');
+}
+
+/* h3 {
+    font-family: Inter var !important;
+    font-smooth: always;
+    font-smooth: 2em !important;
+} */
+
+:root { font-family: monospace, 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+    :root { font-family: 'Inter var', sans-serif; }
+}
