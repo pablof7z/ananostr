@@ -3,7 +3,7 @@
         <div class="w-64">
             <img src="/images/pineapple-svgrepo-com.svg">
         </div>
-        <h1 class="text-4xl md:text-6xl text-purple-800" style="font-family: 'Press Start 2P';">
+        <h1 class="text-4xl md:text-6xl text-purple-800 mt-3" style="font-family: 'Press Start 2P';">
             ANANOSTR
         </h1>
         <h3 class="text-gray-500 mt-10">
