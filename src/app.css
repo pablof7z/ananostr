@@ -6,6 +6,10 @@
     src: url(/fonts/PressStart2P-Regular.ttf) format('truetype');
 }
 
+h1 {
+    font-family: "Press Start 2P";
+}
+
 /* h3 {
     font-family: Inter var !important;
     font-smooth: always;
