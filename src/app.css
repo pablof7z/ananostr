@@ -10,6 +10,17 @@ h1 {
     font-family: "Press Start 2P";
 }
 
+.note-content h1 {
+    margin-top: 1.5rem;
+    font-family: Inter var !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.note-content p {
+    margin-bottom: 1rem;
+}
+
 /* h3 {
     font-family: Inter var !important;
     font-smooth: always;

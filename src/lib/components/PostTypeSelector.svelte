@@ -17,6 +17,7 @@
         <option value="coffee">☕️ meet for coffee</option>
         <option value="surfing">🏄 meet for surfing</option>
         <option value="climbing">🧗‍♀️ meet for climbing</option>
+        <option value="psa">📢 general announce</option>
     </select>
 </div>
 

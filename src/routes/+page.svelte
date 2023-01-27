@@ -56,6 +56,8 @@
           <span class="text-5xl">🧗‍♂️</span>
         {:else if post.content.type === 'coffee'}
           <span class="text-5xl">☕️</span>
+        {:else if post.content.type === 'psa'}
+          <span class="text-5xl">📢</span>
         {:else}
           {post.content.type}
         {/if}

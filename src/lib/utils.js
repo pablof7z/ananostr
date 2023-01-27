@@ -23,5 +23,6 @@ export function formatSatoshis(sats, {tryThousands} = {}) {
 export function massageString(content) {
     const bitcoinImage = "<img src=\"/images/Bitcoin_evergreen.png\" style=\"width: 1.2em; vertical-align: -20%; margin-right: 0.075em; height: 1.2em; margin-left: 2px; display: inline-block;\">";
 
-    return content.replace(/#bitcoin/, `#bitcoin${bitcoinImage}`)
+    return content
+        .replace(/#bitcoin/, `#bitcoin${bitcoinImage}`);
 }

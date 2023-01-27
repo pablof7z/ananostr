@@ -19,7 +19,7 @@
     })
 
     function validate(data) {
-        const validTypes = [ 'lodging', 'airport', 'coffee', 'surfing', 'climbing' ];
+        const validTypes = [ 'lodging', 'airport', 'coffee', 'surfing', 'climbing', 'psa' ];
 
         if (!data.type || !validTypes.includes(data.type)) {
             return false;
@@ -50,7 +50,7 @@
 
         let event = {
             content: JSON.stringify(data),
-            kind: 111119,
+            kind: 111120,
             created_at: Math.floor(Date.now() / 1000),
             tags: [],
             pubkey: ownPubkey,
