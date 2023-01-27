@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,6 +10,10 @@ module.exports = {
             sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         },
     },
+    colors: {
+        ...colors,
+        "purple-1000": '#290a42'
+    }
   },
   plugins: [
     require('@tailwindcss/forms')

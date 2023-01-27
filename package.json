@@ -32,10 +32,16 @@
 	"dependencies": {
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/typography": "^0.5.9",
+		"date-fns": "^2.29.3",
 		"javascript-time-ago": "^2.5.9",
 		"markdown": "^0.5.0",
 		"markdown-it": "^13.0.1",
+		"moment": "^2.29.4",
 		"nostr": "^0.2.7",
-		"nostr-tools": "^1.2.0"
+		"nostr-relaypool": "^0.3.29",
+		"nostr-tools": "^1.2.0",
+		"svelte-local-storage-store": "^0.4.0",
+		"uuid": "^9.0.0",
+		"websocket-polyfill": "^0.0.3"
 	}
 }
