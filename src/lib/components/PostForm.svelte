@@ -46,9 +46,11 @@
 
         if (!validate(data)) { return; }
 
+        data.categories = [{ events: ['nostrica'] }]
+
         let event = {
             content: JSON.stringify(data),
-            kind: 111116,
+            kind: 111117,
             created_at: Math.floor(Date.now() / 1000),
             tags: [],
             pubkey: ownPubkey,

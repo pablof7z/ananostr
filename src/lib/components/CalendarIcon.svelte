@@ -31,7 +31,7 @@
                 {/if}
             </div>
             <div class="py-1 border-l border-r border-white bg-white">
-                <span class="text-xl font-bold leading-tight px-2">
+                <span class="text-xl font-bold leading-tight px-2 whitespace-nowrap">
                     {#if day && endDay && day !== endDay }
                         {day} - {endDay}
                     {:else}

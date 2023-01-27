@@ -50,9 +50,7 @@
         </div>
     </div>
 </div>
-{/if}
-
-{#if visibleChoice === 'airport'}
+{:else if visibleChoice === 'airport'}
 <div id="aiport">
     <div class="my-3">
         <label class="block font-medium">When?</label>
@@ -65,15 +63,30 @@
 </div>
 {/if}
 
+{#if !!visibleChoice}
 <div class="my-3">
     <label for="title" class="block font-medium">Title</label>
-    <input id="title" type="text" name="title" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black text-2xl py-3" placeholder="TL;DR">
+    <input id="title" type="text" name="title" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black text-2xl py-3" placeholder="TL;DR" required minlength="5">
     <span class="text-sm text-gray-50">
         This will appear in the main page.
     </span>
 </div>
 
-{#if !!visibleChoice}
+{#if ['surfing', 'coffee', 'climbing'].includes(visibleChoice)}
+<h3 class="text-lg font-semibold">
+    Want to share when you'll be available?
+</h3>
+<div class="flex flex-col md:flex-row">
+    <div class="my-3 flex-1 md:mr-1">
+        <input type="date" name="checkIn" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black text-2xl py-3">
+    </div>
+
+    <div class="my-3 flex-1 md:ml-1">
+        <input type="date" name="checkOut" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black text-2xl py-3">
+    </div>
+</div>
+{/if}
+
 <div class="my-3">
     <label for="comment" class="block font-medium text-white">
         {#if visibleChoice === 'lodging'}
@@ -87,7 +100,7 @@
     </label>
 
     <div class="mt-1">
-        <textarea rows="10" name="comment" id="comment" class="block w-full rounded-md border-gray-300 border shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500 text-black"></textarea>
+        <textarea rows="10" name="comment" id="comment" class="block w-full rounded-md border-gray-300 border shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500 text-black" required minlength="10"></textarea>
     </div>
 </div>
 {/if}

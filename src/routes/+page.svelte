@@ -6,6 +6,7 @@
     import PostForm from '$lib/components/PostForm.svelte';
     import NoteContent from '$lib/components/NoteContent.svelte';
     import { formatSatoshis } from '$lib/utils';
+    import { massageString } from "$lib/utils";
 
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
@@ -19,15 +20,13 @@
     }
 
     onMount(async () => {
-        $nostrPool.subscribe([{kinds: [111116]}]);
-      setTimeout(() => {
-        $nostrPool.add("wss://relay.damus.io");
-      }, 60000);
+        $nostrPool.subscribe([{kinds: [111117]}]);
     })
 
     function posted(event) {
       const eventId = event.detail;
-      goto(`/e/${eventId}`);
+      showForm = false
+      // goto(`/e/${eventId}`);
     }
 </script>
 
@@ -69,10 +68,12 @@
           <div class="truncate">
             {#if post.content.title}
               <h2 class="font-semibold text-lg text-purple-900">
-                {post.content.title}
+                {@html massageString(post.content.title)}
               </h2>
             {/if}
-            <NoteContent content={post.content.comment} />
+            <div class="text-gray-500 text-sm mt-1">
+              <NoteContent content={post.content.comment} />
+            </div>
           </div>
         </div>
         {#if post.content.price}
@@ -94,8 +95,8 @@
           {#if post.content.date}
             <CalendarIcon date={post.content.date} />
           {/if}
-        {:else if post.content.type === 'lodging'}
-          {#if post.content.checkIn && post.content.checkOut}
+        {:else}
+          {#if post.content.checkIn}
             <div class="mr-2">
               <CalendarIcon date={post.content.checkIn} endDate={post.content.checkOut} />
             </div>
@@ -109,9 +110,14 @@
         </div>
 
         {#if ($nostrNotes.responses[post.id])}
-        <div class="whitespace-nowrap py-2 px-3 text-sm bg-slate-200 text-gray-800 rounded-lg my-2 md:mr-2 flex flex-row md:flex-col items-center gap-1">
+        <div class="whitespace-nowrap py-2 px-3 text-sm bg-purple-100 text-gray-800 rounded-lg mt-1 md:mr-2 flex flex-row md:flex-col items-center gap-1">
             <span class="font-bold text-md">{$nostrNotes.responses[post.id].length}</span>
-            <span>📝</span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+              </svg>
+              
+            </span>
         </div>
       {/if}
       </div>

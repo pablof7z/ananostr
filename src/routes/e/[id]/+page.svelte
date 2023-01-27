@@ -9,7 +9,6 @@
 	import Avatar from '$lib/components/Avatar.svelte';
     import { page } from '$app/stores';
     
-
     let noteId = $page.params.id;
 
     let showReplyForm = false;
