@@ -7,12 +7,12 @@
     TimeAgo.addDefaultLocale(en)
 
     onMount(async () => {
+        await $nostrPool.add('wws://5b82-157-245-32-159.eu.ngrok.io');
         await $nostrPool.add('wss://nostr-pub.wellorder.net');
         await $nostrPool.add('wss://nostr1.tunnelsats.com');
         await $nostrPool.add('wss://relay.nostr.info');
         await $nostrPool.add("wss://relay.snort.social");
         
-        // await $nostrPool.add('ws://100.104.50.24:8080');
 
         try {
             const userRelays = await window.nostr?.getRelays()
