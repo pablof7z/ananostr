@@ -50,7 +50,7 @@
 
         let event = {
             content: JSON.stringify(data),
-            kind: 11120,
+            kind: 120,
             created_at: Math.floor(Date.now() / 1000),
             tags: [],
             pubkey: ownPubkey,

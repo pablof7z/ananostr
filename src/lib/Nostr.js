@@ -59,7 +59,7 @@ export default class Nostr {
         
         if (event.kind === 2) {
             console.log(`got post ${event.id}`);
-        } else if (event.kind === 11120) {
+        } else if (event.kind === 120) {
             posts.update((posts) => {
                 if (!posts.find((p) => p.id === event.id)) {
                     posts.unshift(event)
