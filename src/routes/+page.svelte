@@ -20,7 +20,7 @@
     }
 
     onMount(async () => {
-        $nostrPool.subscribe([{kinds: [111119]}]);
+        $nostrPool.subscribe([{kinds: [11120]}]);
     })
 
     function posted(event) {
