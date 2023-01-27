@@ -21,6 +21,12 @@ h1 {
     margin-bottom: 1rem;
 }
 
+.note-content a {
+    font-weight: 500;
+    color: rgb(126 34 206 / var(--tw-text-opacity));
+    text-decoration: underline;
+}
+
 /* h3 {
     font-family: Inter var !important;
     font-smooth: always;

@@ -15,7 +15,7 @@
     export let note;
 </script>
 
-<div class="bg-purple-900 text-white border rounded-lg p-4 w-full my-4">
+<div class="bg-purple-900 text-white border md:rounded-lg p-4 w-full my-4">
     <div class="flex flex-row overflow-clip text-ellipsis items-center">
         <Avatar klass="m-2 h-16 ring-8 ring-purple-1000" pubkey={note?.pubkey} />
         <div class="pl-4 flex flex-col text-ellipsis">
@@ -32,6 +32,8 @@
     {#if note.content?.type === 'lodging'}
         <LodgingCard note={note} />
     {/if}
+
+    <h2 class="mt-4 md:mt-6 px-4 font-bold text-2xl">{note.content?.title}</h2>
 
     {#if note.content?.comment}
         <div class="mt-5 p-4 bg-white rounded text-gray-700 ">
